@@ -1,0 +1,94 @@
+/* ==================Display=============== */
+.display-container {
+  width: 80%;
+  min-height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  color: whitesmoke;
+  margin-bottom: 5rem;
+}
+
+.display-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.display-container h1 {
+  font-size: 3.5rem;
+}
+.display-container .temperature-container {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.display-container .temperature-container h1 {
+  margin-bottom: 0.5rem;
+}
+.humidity-cloud h3 {
+  margin-bottom: 0.5rem;
+}
+.display-container .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.display-container .image-container img {
+  margin-bottom: 1rem;
+}
+
+.location-container {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+.location-container h1 {
+  font-size: 4rem;
+  color: whitesmoke;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1030px) {
+  .location-container {
+    width: 70%;
+  }
+  .display-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 730px) {
+  .location-container {
+    width: 70%;
+  }
+  .display-container h1 {
+    font-size: 2.5rem;
+}
+.display-container h2 {
+    font-size: 1.5rem;
+}
+.humidity-cloud h3 {
+   font-size: 1rem;
+}
+.display-container .image-container {
+    font-size: 0.95rem;
+}
+.location-container {
+    width: 100%;
+}
+}
+
+@media (max-width: 500px) {
+    .display-container {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-bottom: 3rem;
+    }
+    .location-container h1 {
+        font-size: 2.5rem;
+    }
+}
