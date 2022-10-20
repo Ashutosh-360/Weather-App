@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Display from "./components/Display/Display";
 import Input from "./components/Input/Input";
+import React, { Suspense, lazy } from "react";
+const Display = lazy(() => import("./components/Display/Display"));
 
 function App() {
   const [getInput, setInput] = useState("");
@@ -23,7 +24,6 @@ function App() {
       const fetchURl = await fetch(url);
       const data = await fetchURl.json();
       setLocationData(data);
-      // console.log(data);
     }
     fetchData();
   }, [location]);
@@ -33,7 +33,9 @@ function App() {
       {!locationData.location?.name ? (
         <div className="not-found">No Location Found</div>
       ) : (
-        <Display locationData={locationData} />
+        <Suspense fallback={<div className="loading">Loading....</div>}>
+          <Display locationData={locationData} />
+        </Suspense>
       )}
 
       <Input
